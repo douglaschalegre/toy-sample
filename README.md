@@ -1,9 +1,11 @@
 ## Overview
 
-This project contains a script (`main.py`) that processes text files containing git diffs, detects new functions without docstrings, and generates appropriate docstrings for them using the `ollama` library.
+In the life cycle of software development nearly 90% of effort is used for understanding a maintenance task and related software source code. This means that documentation that provides a high level description of tasks performed by code can have a huge impact in minimizing such maintenance tasks. The problem is that such detailed descriptions are labor-intensive tasks and are a feature that do not deliver immediate value to project managers or product owners. This toy sample aims to demonstrate how automated tools can assist in generating documentation, specifically docstrings, for new functions in code, thereby reducing the time and effort required for maintenance.
 
 
 ### Description
+
+This project contains a script (`main.py`) that processes text files containing git diffs, detects new functions without docstrings, and generates appropriate docstrings for them using the `ollama` library.
 
 The `main.py` script performs the following tasks:
 
@@ -15,7 +17,7 @@ The `main.py` script performs the following tasks:
 
 ### Usage
 
-To run the script, execute the following command in your terminal:
+To run the script, install required packages then, execute the following command in your terminal:
 
 python main.py
 
