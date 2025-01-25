@@ -5,7 +5,7 @@ In the life cycle of software development nearly 90% of effort is used for under
 
 ### Description
 
-This project contains a script (`main.py`) that processes text files containing git diffs, detects new functions without docstrings, and generates appropriate docstrings for them using the `ollama` library.
+This project contains a script (`main.py`) that processes text files containing git diffs, detects new functions without docstrings, and generates appropriate docstrings for them using the `ollama` library. Additionally, it leverages AI agents to automate various tasks related to documentation.
 
 The `main.py` script performs the following tasks:
 
@@ -14,6 +14,8 @@ The `main.py` script performs the following tasks:
 3. **Extracts New Lines**: It extracts lines that start with a "+" (indicating new lines in a git diff).
 4. **Generates a Prompt**: If there are files, it generates a prompt for the `ollama` model to analyze the new code and identify functions without docstrings.
 5. **Generates Docstrings**: It uses the `ollama` model to generate docstrings for the identified functions and prints the response.
+6. **AI Agents**: Utilizes AI agents to write, check, and evaluate the quality of documentation, ensuring comprehensive and high-quality docstrings.
+
 
 ## Goal
 
