@@ -15,6 +15,12 @@ The `main.py` script performs the following tasks:
 4. **Generates a Prompt**: If there are files, it generates a prompt for the `ollama` model to analyze the new code and identify functions without docstrings.
 5. **Generates Docstrings**: It uses the `ollama` model to generate docstrings for the identified functions and prints the response.
 
+## Goal
+
+The goal of this sample is to automate generation of descriptive documentations. The green are implemented functionality, red are features to be added
+
+![Project Diagram](./image.png)
+
 ### Usage
 
 To run the script, install required packages then, execute the following command in your terminal:
@@ -60,3 +66,10 @@ def get_house_finance_data(sheet) -> str:
 ```
 
 This docstring provides an overview of what the function does, its parameters, and its return value.
+
+## Improvment backlog
+- [ ] Add [Guardrails](https://docs.crewai.com/concepts/tasks#task-guardrails) to tasks
+- [ ] Use [pydantic](https://docs.crewai.com/concepts/tasks#using-output-pydantic) to get structured and consistent outputs
+- [ ] Search for or implement a git tool to be able to create branches, open merge requests etc.
+- [ ] Tool for editing codebase, adding created docstring to function.
+- [ ] Improve performance

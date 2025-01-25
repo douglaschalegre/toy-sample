@@ -1,0 +1,2 @@
+The current documentation for the `get_house_finance_data` function is rated at approximately 15 out of 100. It lacks clarity due to misleading descriptions, completeness as it omits parameter details and potential exceptions, relevance with incorrect mentions of databases, and accuracy in specifying the wrong return type. Significant improvements are needed to align the docstring with the function's actual behavior.
+```
