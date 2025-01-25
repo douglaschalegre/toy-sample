@@ -1,6 +1,6 @@
-import ollama
 import os
 import chardet
+from doc_automation.src.doc_automation.crew import DocAutomation
 
 mypath = "./files"
 files = [
@@ -8,7 +8,7 @@ files = [
     for f in os.listdir(mypath)
     if os.path.isfile(os.path.join(mypath, f))
 ]
-print(files)
+
 context = []
 for f in files:
     with open(f, "rb") as file:
@@ -17,15 +17,16 @@ for f in files:
         encoding = result["encoding"]
         decoded_data = raw_data.decode(encoding)
         new_lines = [line for line in decoded_data.splitlines() if line.startswith("+")]
-        context.append("\n".join(new_lines))
-print(context)
-if files:
-    prompt = f"""I will provide txt files that are git diffs. I need to know if there are any new
-functions implemented without docstrings to explain code.
-Those are the files on a list:
-{context}
-Only analyze new code. Give me a list of functions without docstring and write me a docstring for them.
-"""
+        context.append({"content": "\n".join(new_lines)})
 
-    response = ollama.generate(model="phi4", prompt=prompt).response
-    print(response)
+doc_automation = DocAutomation()
+crew_ai_input = []
+for item in context:
+    crew_ai_input.append(
+        {
+            "code_function": item["content"],
+            "code_function_name": "example_function_name",
+        }
+    )
+
+doc_automation.crew().kickoff_for_each(inputs=crew_ai_input)
